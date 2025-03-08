@@ -1,31 +1,31 @@
-import { HStack, Box, Text, Circle, Flex } from "@chakra-ui/react";
-import CloseIcon from "../../../public/assets/icons/close";
+import { HStack, Box, Text } from "@chakra-ui/react";
+import CheckIcon from "../../../public/assets/icons/check";
 import { mockedAnalysisStatus } from "@/constants";
 
 const StatusList = () => {
   return (
     <HStack
-      p="24px 0 16px 0"
+      p="24px 24px 16px 24px"
       width="100%"
       borderBottom="1px solid #E0E0DE"
-      alignItems="center"
-  justifyContent="flex-start"
-  pl={10}
+      gap={2}
+      justifyContent="space-between"
     >
       {mockedAnalysisStatus.map((status, i) => (
-        <Flex key={i} alignItems="center" flex="1">
-          {i === 0 ? (
-            <CloseIcon width="36px" height="36px" />
-          ) : (
-            <Circle size="36px" border="1px solid #A0A0A0" />
-          )}
-          <Text fontSize="sm" ml={2}>
+        <HStack key={i} gap={2} width="100%" alignItems="center">
+          {status.state && <CheckIcon width="36px" height="36px" />}
+          <Text fontSize="sm" flexShrink={0}>
             {status.label}
           </Text>
           {i < mockedAnalysisStatus.length - 1 && (
-            <Box flex="1" height="1px" bg="#E0E0DE" mx={2} />
+            <Box
+              flexGrow={1}
+              height="1px"
+              borderBottom="1px solid #E0E0DE"
+              mx={2}
+            />
           )}
-        </Flex>
+        </HStack>
       ))}
     </HStack>
   );
