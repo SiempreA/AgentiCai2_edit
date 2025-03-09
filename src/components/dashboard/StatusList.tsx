@@ -1,5 +1,4 @@
 import { HStack, Box, Text, Circle, Flex } from "@chakra-ui/react";
-import closeIcon from "../../../public/assets/icons/close";
 import { mockedAnalysisStatus } from "@/constants";
 import CloseIcon from "../../../public/assets/icons/close";
 
@@ -10,8 +9,9 @@ const StatusList = () => {
       width="100%"
       borderBottom="1px solid #E0E0DE"
       alignItems="center"
-  justifyContent="flex-start"
-  pl={10}
+      justifyContent="space-between"
+      pl={10}
+      pr={10}
     >
       {mockedAnalysisStatus.map((status, i) => (
         <Flex key={i} alignItems="center" flex="1">
@@ -20,11 +20,16 @@ const StatusList = () => {
           ) : (
             <Circle size="36px" border="1px solid #A0A0A0" />
           )}
-          <Text fontSize="sm" ml={2}>
+          <Text fontSize="sm" ml={2} minWidth="max-content">
             {status.label}
           </Text>
           {i < mockedAnalysisStatus.length - 1 && (
-            <Box flex="1" height="1px" bg="#E0E0DE" mx={2} />
+            <Box
+              flex="1"
+              height="1px"
+              bg="#A0A0A0"
+              mx={2}
+            />
           )}
         </Flex>
       ))}
@@ -32,4 +37,4 @@ const StatusList = () => {
   );
 };
 
-export default StatusList;
+export default StatusList;
