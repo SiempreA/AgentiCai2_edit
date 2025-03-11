@@ -171,6 +171,18 @@ export const mockedFailAnalysisStatus = [
     label: "Rules Analysis",
     state: true,
   },
+  {
+    label: "Ruless Analysis",
+    state: true,
+  },
+  {
+    label: "Ruless Analysis",
+    state: true,
+  },
+  {
+    label: "Ruless Analysis",
+    state: true,
+  },
   
   
 ];
